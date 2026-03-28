@@ -73,6 +73,10 @@
 
 <body class="bg-neutral900 font-sans text-neutral0 min-h-screen relative overflow-x-hidden">
 
+  <!-- 확실한 컨테이너 감싸기: 모바일 가로 스크롤 방지용 래퍼 -->
+  <div class="w-full overflow-x-hidden">
+
+
   <!-- 배경 스퀴글(장식용) 패턴: 시맨틱을 위해 스크린 리더에서 숨깁니다 -->
   <img src="./assets/bg-hero-squiggle.svg" aria-hidden="true" alt=""
     class="hidden md:block absolute top-0 right-0 z-0 h-auto w-full max-w-[400px]" />
@@ -85,8 +89,10 @@
   </header>
 
   <main class="relative z-10">
-    <!-- 히어로 일러스트: 화면 너비보다 넓게(120%) 설정하고 음수 마진을 이용해 양옆이 잘린 듯한 'Break out' 연출을 합니다 -->
-    <img src="./assets/illustration-hero-mobile.png" alt="작업에 몰두하는 일러스트" class="w-[109%] max-w-none ml-[-4%] mb-800" />
+    <!-- 히어로 일러스트: flex 박스 안에서 [w-408px] 고정 너비를 가지고 정중앙에서 바깥으로 퍼져나가는(Crop) 형태를 띱니다. 상위의 overflow-x-hidden 덕분에 가로 스크롤이 발생하지 않습니다. -->
+    <div class="flex justify-center mb-800">
+      <img src="./assets/illustration-hero-mobile.png" alt="작업에 몰두하는 일러스트" class="w-[408px] max-w-none md:hidden" />
+    </div>
 
     <!-- 2. 레이아웃 구조화: Hero 구역 -->
     <!-- 페이지의 메인 슬로건과 일러스트를 포함하는 핵심 영역입니다 -->
@@ -171,25 +177,29 @@
 
         <ul class="flex flex-col gap-[12px]">
           <li class="flex items-center gap-[12px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-cyan400" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-cyan400"
+              aria-hidden="true">
               <path d="M10.319.768l1.363 1.464-7.128 6.634L.319 4.924 1.682 3.46l2.871 2.674z" />
             </svg>
             <span class="text-preset5 text-neutral0">Unlimited products</span>
           </li>
           <li class="flex items-center gap-[12px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-cyan400" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-cyan400"
+              aria-hidden="true">
               <path d="M10.319.768l1.363 1.464-7.128 6.634L.319 4.924 1.682 3.46l2.871 2.674z" />
             </svg>
             <span class="text-preset5 text-neutral0">Basic analytics</span>
           </li>
           <li class="flex items-center gap-[12px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-cyan400" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-cyan400"
+              aria-hidden="true">
               <path d="M10.319.768l1.363 1.464-7.128 6.634L.319 4.924 1.682 3.46l2.871 2.674z" />
             </svg>
             <span class="text-preset5 text-neutral0">Limited marketplace exposure</span>
           </li>
           <li class="flex items-center gap-[12px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-cyan400" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-cyan400"
+              aria-hidden="true">
               <path d="M10.319.768l1.363 1.464-7.128 6.634L.319 4.924 1.682 3.46l2.871 2.674z" />
             </svg>
             <span class="text-preset5 text-neutral0">10% fee per transaction</span>
@@ -210,25 +220,29 @@
 
         <ul class="flex flex-col gap-[12px]">
           <li class="flex items-center gap-[12px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-blue800" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-blue800"
+              aria-hidden="true">
               <path d="M10.319.768l1.363 1.464-7.128 6.634L.319 4.924 1.682 3.46l2.871 2.674z" />
             </svg>
             <span class="text-preset5 text-neutral900">Custom domain</span>
           </li>
           <li class="flex items-center gap-[12px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-blue800" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-blue800"
+              aria-hidden="true">
               <path d="M10.319.768l1.363 1.464-7.128 6.634L.319 4.924 1.682 3.46l2.871 2.674z" />
             </svg>
             <span class="text-preset5 text-neutral900">Advanced analytics and reports</span>
           </li>
           <li class="flex items-center gap-[12px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-blue800" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-blue800"
+              aria-hidden="true">
               <path d="M10.319.768l1.363 1.464-7.128 6.634L.319 4.924 1.682 3.46l2.871 2.674z" />
             </svg>
             <span class="text-preset5 text-neutral900">High marketplace visibility</span>
           </li>
           <li class="flex items-center gap-[12px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-blue800" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" class="shrink-0 fill-blue800"
+              aria-hidden="true">
               <path d="M10.319.768l1.363 1.464-7.128 6.634L.319 4.924 1.682 3.46l2.871 2.674z" />
             </svg>
             <span class="text-preset5 text-neutral900">5% fee per transaction</span>
@@ -239,40 +253,44 @@
     </section>
   </main>
 
-  <!-- 배경 하단 스퀴글 (모바일 푸터용 장식) -->
-  <img src="./assets/bg-footer-squiggle.svg" aria-hidden="true" alt=""
-    class="hidden md:block absolute bottom-0 left-0 z-0 h-auto w-full max-w-[400px] md:max-w-full" />
-
   <!-- 2. 레이아웃 구조화: CTA 및 Footer 영역 -->
-  <!-- 사용자의 최종 액션을 유도하는 폼 영역입니다 -->
-  <footer id="cta" class="flex flex-col items-center text-center px-200 pb-[59px] mx-auto w-full relative z-10 pt-0">
-    <h2 class="text-preset1-mobile text-neutral0 mb-500">Get notified when we launch</h2>
+  <!-- 사용자의 최종 액션을 유도하는 폼 영역입니다. 모바일 전용 배경 스퀴글을 포함합니다. -->
+  <footer id="cta"
+    class="flex flex-col items-center text-center px-200 pb-[59px] mx-auto w-full relative z-10 pt-0 overflow-hidden">
+    <!-- 모바일 전용 배경 스퀴글 장식 -->
+    <img src="./assets/bg-footer-squiggle.svg" aria-hidden="true" alt=""
+      class="absolute top-[37%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1] max-w-[200%] md:hidden" />
+    <div class="relative z-10 pt-0"> <!-- 콘텐츠가 스퀴글 위에 잘보이도록 패딩 추가 -->
+      <h2 class="text-preset1-mobile text-neutral0 mb-500">Get notified when we launch</h2>
 
-    <!-- 3. 이메일 입력 폼 (이벤트 감지 및 검증 대상) -->
-    <form id="notify-form" class="w-full max-w-[343px] flex flex-col gap-200" novalidate>
-      <div class="relative w-full text-left">
-        <label for="email-input" class="sr-only">Email address</label>
+      <!-- 3. 이메일 입력 폼 (이벤트 감지 및 검증 대상) -->
+      <form id="notify-form" class="w-full max-w-[343px] flex flex-col gap-200" novalidate>
+        <div class="relative w-full text-left">
+          <label for="email-input" class="sr-only">Email address</label>
 
-        <!-- 에러 상황 대비: 평소에는 border-transparent 였다가 에러발생 시 JS로 border-red400 을 덮어씌웁니다 -->
-        <input type="email" id="email-input"
-          class="w-full bg-blue800 rounded-full h-[48px] px-300 text-preset6 text-neutral0 outline-none border-0 transition-colors placeholder-blueGray500"
-          placeholder="Email address" aria-invalid="false" />
+          <!-- 에러 상황 대비: 평소에는 border-transparent 였다가 에러발생 시 JS로 border-red400 을 덮어씌웁니다 -->
+          <input type="email" id="email-input"
+            class="w-full bg-blue800 rounded-full h-[48px] px-300 text-preset6 text-neutral0 outline-none border-0 transition-colors placeholder-blueGray500"
+            placeholder="Email address" aria-invalid="false" />
 
-        <!-- 에러 메시지 자리 확보: 평소에는 숨김(hidden) 처리 -->
-        <span id="email-error" class="hidden text-red400 text-[12px] font-bold mt-[8px] pl-300"
-          aria-live="polite"></span>
-      </div>
+          <!-- 에러 메시지 자리 확보: 평소에는 숨김(hidden) 처리 -->
+          <span id="email-error" class="hidden text-red400 text-[12px] font-bold mt-[8px] pl-300"
+            aria-live="polite"></span>
+        </div>
 
-      <!-- 제출 버튼 -->
-      <button type="submit"
-        class="w-full h-[48px] bg-cyan400 rounded-full text-preset6 text-blue800 hover:bg-transparent hover:text-neutral0 hover:border-2 hover:border-cyan400 transition-colors">
-        Get notified
-      </button>
-    </form>
+        <!-- 제출 버튼 -->
+        <button type="submit"
+          class="w-full h-[48px] bg-cyan400 rounded-full text-preset6 text-blue800 hover:bg-transparent hover:text-neutral0 hover:border-2 hover:border-cyan400 transition-colors">
+          Get notified
+        </button>
+      </form>
+    </div>
   </footer>
 
   <!-- 3. 이메일 폼 검증 바닐라 JS 로직 -->
   <script src="./main.js"></script>
+
+  </div> <!-- /w-full overflow-x-hidden 래퍼 끝 -->
 
 </body>
 
